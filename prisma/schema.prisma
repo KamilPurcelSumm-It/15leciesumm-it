@@ -1,0 +1,35 @@
+// Prisma schema — rejestr rejestracji na wydarzenie "15-lecie summ-it"
+// Baza: SQL Server. Lokalnie można użyć instancji MSSQL, a w Azure App Service
+// połączenie przekazać przez DATABASE_URL jako connection string.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+// Jeden rejestr — każdy wiersz to jedno zgłoszenie z formularza rejestracyjnego.
+// id: unikalny identyfikator wewnętrzny (UUID)
+// guid: publiczny identyfikator do QR kodów (UUID)
+model Registration {
+  id          String       @id @default(uuid())  // UUID dla SQL Server
+  guid        String       @unique @default(uuid())  // Publiczny identyfikator do QR kodów
+  firstName   String
+  lastName    String
+  company     String
+  email       String
+
+  accommodation String?    // Czy potrzebuje noclegu? (odpowiedź tekstowa)
+  parking        String?   // Czy potrzebuje miejsca parkingowego?
+  dietaryNeeds   String?   // Specjalne wymagania dietetyczne
+
+  imageConsent String       // "YES" lub "NO"
+
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @default(now()) @updatedAt
+
+  @@map("registrations")
+}

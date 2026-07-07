@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "eyebrow": "15-lecie summ-it",
+    "title": "Od 15 lat łączy nas technologia, wspólnie świętujmy przyszłość",
+    "subtitle": "Dołącz do jubileuszowego wieczoru z okazji 15-lecia summ-",
+    "cta_register": "Zarejestruj się",
+    "cta_agenda": "Zobacz agendę",
+    "label_date": "Data",
+    "label_place": "Miejsce"
+  },
+  "agenda": {
+    "title": "Agenda wydarzenia",
+    "item0_title": "Rejestracja i powitanie",
+    "item0_line1": "Rejestracja uczestników, zajęcie",
+    "item0_line2": "miejsc i powitanie"
+  },
+  "registration": {
+    "section_title": "Rejestracja użytkowników",
+    "field_first_name": "Imię",
+    "field_last_name": "Nazwisko",
+    "field_company": "Firma",
+    "field_email": "E-mail",
+    "field_accommodation": "Czy potrzebuje Pan/Pani noclegu?",
+    "field_parking": "Czy potrzebuje Pan/Pani miejsca parkingowego w hotelu?",
+    "field_dietary": "Czy ma Pan/Pani specjalne wymagania dietetyczne? (jeśli tak, jakie?)",
+    "consent_text": "Czy wyraża Pan/Pani zgodę na utrwalanie i wykorzystanie swojego wizerunku w materiałach foto i wideo z wydarzenia?",
+    "consent_yes": "Tak, wyrażam zgodę",
+    "consent_no": "Nie wyrażam zgody",
+    "submit": "Zarejestruj się",
+    "submitting": "Wysyłanie...",
+    "success_title": "Dziękujemy za rejestrację",
+    "success_text": "Twoje zgłoszenie zostało zapisane. Szczegóły wydarzenia prześlemy na podany adres e-mail.",
+    "closed_event": "Wydarzenie ma charakter zamknięty i jest przeznaczone dla zaproszonych gości.",
+    "error_validation": "Formularz zawiera błędy.",
+    "error_server": "Nie udało się zapisać zgłoszenia.",
+    "error_network": "Brak połączenia z serwerem. Spróbuj ponownie.",
+    "error_not_found": "Rejestracja z tym kodem nie znaleziona.",
+    "loading": "Ładowanie danych..."
+  },
+  "venue": {
+    "section_title": "Miejsce wydarzenia",
+    "map_button": "Zobacz na mapie",
+    "feature1_title": "Dogodna lokalizacja",
+    "feature1_desc": "Blisko centrum Poznania, z łatwym dojazdem i parkingiem dla gości.",
+    "feature2_title": "Jubileuszowy wieczór summ-it",
+    "feature2_desc": "Spotkajmy się, by wspólnie świętować 15 lat współpracy, rozwoju i sukcesów."
+  },
+  "footer": {
+    "nav_title": "Nawigacja",
+    "nav_agenda": "Agenda",
+    "nav_registration": "Rejestracja",
+    "nav_place": "Miejsce",
+    "nav_contact": "Kontakt",
+    "contact_title": "Kontakt"
+  },
+  "lang": {
+    "pl": "Polski",
+    "en": "English",
+    "de": "Deutsch"
+  }
+}

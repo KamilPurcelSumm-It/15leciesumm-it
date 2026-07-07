@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "eyebrow": "15th anniversary of summ-it",
+    "title": "For 15 years technology has united us, let's celebrate the future together",
+    "subtitle": "Join the anniversary evening celebrating 15 years of summ-",
+    "cta_register": "Register now",
+    "cta_agenda": "View agenda",
+    "label_date": "Date",
+    "label_place": "Venue"
+  },
+  "agenda": {
+    "title": "Event agenda",
+    "item0_title": "Registration & welcome",
+    "item0_line1": "Guest registration, seating",
+    "item0_line2": "and welcome"
+  },
+  "registration": {
+    "section_title": "Registration",
+    "field_first_name": "First name",
+    "field_last_name": "Last name",
+    "field_company": "Company",
+    "field_email": "E-mail",
+    "field_accommodation": "Do you need accommodation?",
+    "field_parking": "Do you need a parking space at the hotel?",
+    "field_dietary": "Do you have any dietary requirements? (if yes, please specify)",
+    "consent_text": "Do you consent to your image being recorded and used in photo and video materials from the event?",
+    "consent_yes": "Yes, I consent",
+    "consent_no": "I do not consent",
+    "submit": "Register",
+    "submitting": "Sending...",
+    "success_title": "Thank you for registering",
+    "success_text": "Your registration has been saved. Event details will be sent to the provided e-mail address.",
+    "closed_event": "This is a closed event for invited guests only.",
+    "error_validation": "The form contains errors.",
+    "error_server": "Failed to save your registration.",
+    "error_network": "No server connection. Please try again."
+  },
+  "venue": {
+    "section_title": "Event venue",
+    "map_button": "View on map",
+    "feature1_title": "Convenient location",
+    "feature1_desc": "Close to the city centre of Poznań, with easy access and parking for guests.",
+    "feature2_title": "summ-it anniversary evening",
+    "feature2_desc": "Join us to celebrate 15 years of collaboration, growth and success."
+  },
+  "footer": {
+    "nav_title": "Navigation",
+    "nav_agenda": "Agenda",
+    "nav_registration": "Registration",
+    "nav_place": "Venue",
+    "nav_contact": "Contact",
+    "contact_title": "Contact"
+  },
+  "lang": {
+    "pl": "Polski",
+    "en": "English",
+    "de": "Deutsch"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "eyebrow": "15 Jahre summ-it",
+    "title": "Seit 15 Jahren verbindet uns Technologie, lasst uns gemeinsam die Zukunft feiern",
+    "subtitle": "Kommen Sie zum Jubiläumsabend anlässlich des 15-jährigen Bestehens von summ-",
+    "cta_register": "Jetzt anmelden",
+    "cta_agenda": "Programm ansehen",
+    "label_date": "Datum",
+    "label_place": "Veranstaltungsort"
+  },
+  "agenda": {
+    "title": "Veranstaltungsprogramm",
+    "item0_title": "Anmeldung & Begrüßung",
+    "item0_line1": "Registrierung der Gäste,",
+    "item0_line2": "Platznahme und Begrüßung"
+  },
+  "registration": {
+    "section_title": "Anmeldung",
+    "field_first_name": "Vorname",
+    "field_last_name": "Nachname",
+    "field_company": "Unternehmen",
+    "field_email": "E-Mail",
+    "field_accommodation": "Benötigen Sie eine Unterkunft?",
+    "field_parking": "Benötigen Sie einen Parkplatz im Hotel?",
+    "field_dietary": "Haben Sie besondere Ernährungsanforderungen? (falls ja, bitte angeben)",
+    "consent_text": "Stimmen Sie zu, dass Ihr Bild in Foto- und Videomaterial der Veranstaltung erfasst und verwendet werden darf?",
+    "consent_yes": "Ja, ich stimme zu",
+    "consent_no": "Ich stimme nicht zu",
+    "submit": "Anmelden",
+    "submitting": "Wird gesendet...",
+    "success_title": "Vielen Dank für Ihre Anmeldung",
+    "success_text": "Ihre Anmeldung wurde gespeichert. Die Veranstaltungsdetails werden an die angegebene E-Mail-Adresse gesendet.",
+    "closed_event": "Diese Veranstaltung ist geschlossen und nur für eingeladene Gäste.",
+    "error_validation": "Das Formular enthält Fehler.",
+    "error_server": "Ihre Anmeldung konnte nicht gespeichert werden.",
+    "error_network": "Keine Serververbindung. Bitte versuchen Sie es erneut."
+  },
+  "venue": {
+    "section_title": "Veranstaltungsort",
+    "map_button": "Auf Karte anzeigen",
+    "feature1_title": "Günstige Lage",
+    "feature1_desc": "Nah am Stadtzentrum von Posen, mit guter Erreichbarkeit und Parkplätzen für Gäste.",
+    "feature2_title": "summ-it Jubiläumsabend",
+    "feature2_desc": "Feiern Sie mit uns 15 Jahre Zusammenarbeit, Wachstum und Erfolg."
+  },
+  "footer": {
+    "nav_title": "Navigation",
+    "nav_agenda": "Programm",
+    "nav_registration": "Anmeldung",
+    "nav_place": "Veranstaltungsort",
+    "nav_contact": "Kontakt",
+    "contact_title": "Kontakt"
+  },
+  "lang": {
+    "pl": "Polski",
+    "en": "English",
+    "de": "Deutsch"
+  }
+}
