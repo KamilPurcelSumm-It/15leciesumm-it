@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
+function logApiError(context: string, error: unknown, extra: Record<string, unknown> = {}) {
+  const message = error instanceof Error ? error.stack ?? error.message : String(error);
+  console.error(`[${context}]`, message, extra);
+}
+
 // GET /api/registrations lista
 export async function GET() {
   try {
@@ -9,7 +14,7 @@ export async function GET() {
     });
     return NextResponse.json(registrations);
   } catch (err) {
-    console.error("Błąd pobierania rejestracji:", err);
+    logApiError("GET /api/registrations", err);
     return NextResponse.json(
       { error: "Nie udało się pobrać listy rejestracji." },
       { status: 500 }

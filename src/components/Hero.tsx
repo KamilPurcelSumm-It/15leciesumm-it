@@ -18,6 +18,7 @@ export function Hero() {
           alt=""
           fill
           priority
+          sizes="(min-width: 1024px) 60vw, 100vw"
           className="object-cover object-right"
         />
       </div>
@@ -28,6 +29,7 @@ export function Hero() {
           alt="15-lecie summ-it"
           fill
           priority
+          sizes="(max-width: 768px) 100vw, 60vw"
           className="object-cover"
         />
       </div>

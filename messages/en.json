@@ -33,7 +33,9 @@
     "closed_event": "This is a closed event for invited guests only.",
     "error_validation": "The form contains errors.",
     "error_server": "Failed to save your registration.",
-    "error_network": "No server connection. Please try again."
+    "error_network": "No server connection. Please try again.",
+    "error_not_found": "Registration with this code was not found.",
+    "loading": "Loading data..."
   },
   "venue": {
     "section_title": "Event venue",

@@ -248,6 +248,8 @@ export function RegistrationForm({ guid }: { guid?: string }) {
               src="/images/registration.jpg"
               alt="15-lecie summ-it"
               fill
+              sizes="(min-width: 768px) 40vw, 100vw"
+              loading="eager"
               className="object-cover"
             />
           </div>

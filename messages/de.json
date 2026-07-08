@@ -33,7 +33,9 @@
     "closed_event": "Diese Veranstaltung ist geschlossen und nur für eingeladene Gäste.",
     "error_validation": "Das Formular enthält Fehler.",
     "error_server": "Ihre Anmeldung konnte nicht gespeichert werden.",
-    "error_network": "Keine Serververbindung. Bitte versuchen Sie es erneut."
+    "error_network": "Keine Serververbindung. Bitte versuchen Sie es erneut.",
+    "error_not_found": "Die Registrierung mit diesem Code wurde nicht gefunden.",
+    "loading": "Daten werden geladen..."
   },
   "venue": {
     "section_title": "Veranstaltungsort",

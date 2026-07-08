@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { registrationSchema } from "@/lib/validation";
 
+function logApiError(context: string, error: unknown, extra: Record<string, unknown> = {}) {
+  const message = error instanceof Error ? error.stack ?? error.message : String(error);
+  console.error(`[${context}]`, message, extra);
+}
+
 // GET /api/registrations/[guid]
 export async function GET(
   request: NextRequest,
@@ -30,7 +35,7 @@ export async function GET(
 
     return NextResponse.json(registration);
   } catch (err) {
-    console.error("Błąd pobierania rejestracji:", err);
+    logApiError("GET /api/registrations/[guid]", err, { guid });
     return NextResponse.json(
       { error: "Nie udało się pobrać rejestracji." },
       { status: 500 }
@@ -107,7 +112,7 @@ export async function POST(
       );
     }
   } catch (err) {
-    console.error("Błąd aktualizacji rejestracji:", err);
+    logApiError("POST /api/registrations/[guid]", err, { guid });
     return NextResponse.json(
       { error: "Nie udało się zapisać zgłoszenia. Spróbuj ponownie później." },
       { status: 500 }
