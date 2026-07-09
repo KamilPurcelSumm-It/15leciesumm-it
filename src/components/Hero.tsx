@@ -8,13 +8,13 @@ export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative overflow-hidden bg-neutral-100 px-6 py-12 md:px-16 md:py-16 md:min-h-[640px] lg:min-h-[720px] xl:min-h-[800px]">
+    <section className="relative overflow-hidden bg-neutral-100 px-6 py-12 md:px-16 md:py-16 md:min-h-[560px] lg:min-h-[640px] xl:min-h-[700px]">
       <LanguageSwitcher />
 
       {/* Tło — grafika 15-lecia na całą szerokość sekcji (desktop) */}
       <div className="pointer-events-none absolute inset-0 hidden md:block">
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero2.jpg"
           alt=""
           fill
           priority
@@ -23,9 +23,9 @@ export function Hero() {
         />
       </div>
       {/* Wersja mobilna — zdjęcie nad treścią */}
-      <div className="relative mb-8 h-56 w-full overflow-hidden rounded-2xl md:hidden">
+      <div className="relative mb-8 h-48 w-full overflow-hidden rounded-2xl md:hidden">
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero2.jpg"
           alt="15-lecie summ-it"
           fill
           priority

@@ -25,6 +25,10 @@ model Registration {
 
   accommodation String?    // Czy potrzebuje noclegu? (odpowiedź tekstowa)
   parking        String?   // Czy potrzebuje miejsca parkingowego?
+  // Preferowane wyżywienie — checkboxy: klasyczna / vege
+  mealClassic    Boolean   @default(false)
+  mealVege       Boolean   @default(false)
+
   dietaryNeeds   String?   // Specjalne wymagania dietetyczne
 
   imageConsent String       // "YES" lub "NO"

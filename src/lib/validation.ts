@@ -11,6 +11,10 @@ export const registrationSchema = z.object({
   parking: z.string().trim().optional().or(z.literal("")),
   dietaryNeeds: z.string().trim().optional().or(z.literal("")),
 
+  // Preferowane wyżywienie — checkboxy
+  mealClassic: z.boolean().optional(),
+  mealVege: z.boolean().optional(),
+
   imageConsent: z.enum(["YES", "NO"], {
     message: "Zaznacz, czy wyrażasz zgodę na wykorzystanie wizerunku.",
   }),

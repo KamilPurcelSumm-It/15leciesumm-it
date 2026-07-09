@@ -99,6 +99,10 @@ export async function POST(
           email: data.email,
           accommodation: data.accommodation || null,
           parking: data.parking || null,
+          // new meal preference fields
+          mealClassic: data.mealClassic ?? false,
+          mealVege: data.mealVege ?? false,
+
           dietaryNeeds: data.dietaryNeeds || null,
           imageConsent: data.imageConsent,
         },

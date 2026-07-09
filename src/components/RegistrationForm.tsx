@@ -8,6 +8,13 @@ import { useTranslations } from "next-intl";
 type Status = "idle" | "loading" | "submitting" | "success" | "error";
 type FieldErrors = Record<string, string[] | undefined>;
 
+function logBrowserError(context: string, error: unknown, details: Record<string, unknown> = {}) {
+  const message = error instanceof Error ? error.stack ?? error.message : String(error);
+  console.groupCollapsed(`Error: ${context}`);
+  console.error(message, details);
+  console.groupEnd();
+}
+
 const initialFormState = {
   firstName: "",
   lastName: "",
@@ -15,6 +22,10 @@ const initialFormState = {
   email: "",
   accommodation: "",
   parking: "",
+  // meal preferences as checkboxes
+  mealClassic: false,
+  mealVege: false,
+
   dietaryNeeds: "",
   imageConsent: "" as "" | "YES" | "NO",
 };
@@ -44,6 +55,8 @@ export function RegistrationForm({ guid }: { guid?: string }) {
             email: data.email || "",
             accommodation: data.accommodation || "",
             parking: data.parking || "",
+            mealClassic: data.mealClassic ?? false,
+            mealVege: data.mealVege ?? false,
             dietaryNeeds: data.dietaryNeeds || "",
             imageConsent: data.imageConsent || ("" as "" | "YES" | "NO"),
           });
@@ -52,7 +65,8 @@ export function RegistrationForm({ guid }: { guid?: string }) {
           setErrorMessage(t("error_not_found"));
           setStatus("error");
         }
-      } catch {
+      } catch (err) {
+        logBrowserError("fetchRegistration", err, { guid });
         setErrorMessage(t("error_network"));
         setStatus("error");
       }
@@ -74,8 +88,9 @@ export function RegistrationForm({ guid }: { guid?: string }) {
     setErrorMessage(null);
     setFieldErrors({});
 
+    const endpoint = guid ? `/api/registrations/${guid}` : "/api/registrations";
+
     try {
-      const endpoint = guid ? `/api/registrations/${guid}` : "/api/registrations";
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -84,6 +99,7 @@ export function RegistrationForm({ guid }: { guid?: string }) {
 
       if (response.status === 422) {
         const data = await response.json();
+        logBrowserError("Registration submit validation error", data, { endpoint });
         setFieldErrors(data.fieldErrors ?? {});
         setErrorMessage(data.error ?? t("error_validation"));
         setStatus("error");
@@ -91,15 +107,31 @@ export function RegistrationForm({ guid }: { guid?: string }) {
       }
 
       if (!response.ok) {
-        const data = await response.json().catch(() => null);
-        setErrorMessage(data?.error ?? t("error_server"));
+        const text = await response.text().catch(() => "");
+        let data: unknown;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          data = text;
+        }
+        logBrowserError("Registration submit server error", data, {
+          endpoint,
+          status: response.status,
+          statusText: response.statusText,
+        });
+        setErrorMessage(
+          typeof data === "object" && data && "error" in data
+            ? (data as { error?: string }).error ?? t("error_server")
+            : t("error_server")
+        );
         setStatus("error");
         return;
       }
 
       setStatus("success");
       // Nie czyść formularza — pozwól użytkownikowi widzieć zapisane dane
-    } catch {
+    } catch (err) {
+      logBrowserError("Registration submit request failed", err, { endpoint, form });
       setErrorMessage(t("error_network"));
       setStatus("error");
     }
@@ -194,12 +226,41 @@ export function RegistrationForm({ guid }: { guid?: string }) {
               onChange={(v) => updateField("parking", v)}
             />
 
-            <Field
-              label={t("field_dietary")}
-              name="dietaryNeeds"
-              value={form.dietaryNeeds}
-              onChange={(v) => updateField("dietaryNeeds", v)}
-            />
+            <fieldset className="rounded-3xl border border-black/70 px-5 py-4">
+              <legend className="px-1 text-xs leading-relaxed text-black">
+                {t("field_meal_preference")}
+              </legend>
+              <div className="mt-2 flex flex-wrap gap-x-10 gap-y-2">
+                <CheckboxOption
+                  name="mealClassic"
+                  checked={Boolean(form.mealClassic)}
+                  onChange={(v) => updateField("mealClassic", v)}
+                  label={t("meal_classic")}
+                />
+                <CheckboxOption
+                  name="mealVege"
+                  checked={Boolean(form.mealVege)}
+                  onChange={(v) => updateField("mealVege", v)}
+                  label={t("meal_vege")}
+                />
+              </div>
+            </fieldset>
+
+            <div>
+              <p className="px-1 text-xs leading-relaxed text-black">{t("field_dietary")}</p>
+              <textarea
+                id="dietaryNeeds"
+                name="dietaryNeeds"
+                value={form.dietaryNeeds}
+                onChange={(e) => updateField("dietaryNeeds", e.target.value)}
+                placeholder={t("field_dietary")}
+                className="w-full rounded-2xl border border-black/70 px-4 py-3 text-sm text-black outline-none placeholder:text-black focus:border-maroon"
+                rows={3}
+              />
+              {fieldErrors.dietaryNeeds?.[0] && (
+                <p className="mt-1 px-2 text-xs text-maroon">{fieldErrors.dietaryNeeds[0]}</p>
+              )}
+            </div>
 
             <fieldset className="rounded-3xl border border-black/70 px-5 py-4">
               <legend className="px-1 text-xs leading-relaxed text-black">
@@ -243,7 +304,7 @@ export function RegistrationForm({ guid }: { guid?: string }) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="relative h-56 w-full overflow-hidden rounded-2xl md:h-72">
+            <div className="relative h-96 w-full overflow-hidden rounded-2xl md:h-[640px]">
             <Image
               src="/images/registration.jpg"
               alt="15-lecie summ-it"
@@ -282,25 +343,25 @@ function Field({
   centered?: boolean;
 }) {
   return (
-    <div>
-      <label htmlFor={name} className="sr-only">
-        {label}
-        {required && " *"}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        required={required}
-        placeholder={label}
-        className={`w-full rounded-full border border-black/70 px-5 py-3 text-sm text-black outline-none placeholder:text-black focus:border-maroon ${
-          centered ? "text-center placeholder:text-center" : ""
-        }`}
-      />
-      {error && <p className="mt-1 px-2 text-xs text-maroon">{error}</p>}
-    </div>
+            <div>
+              <p className="px-1 text-xs leading-relaxed text-black">
+                {label}
+                {required && " *"}
+              </p>
+              <input
+                id={name}
+                name={name}
+                type={type}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
+                required={required}
+                placeholder={label}
+                className={`w-full rounded-full border border-black/70 px-5 py-3 text-sm text-black outline-none placeholder:text-black focus:border-maroon ${
+                  centered ? "text-center placeholder:text-center" : ""
+                }`}
+              />
+              {error && <p className="mt-1 px-2 text-xs text-maroon">{error}</p>}
+            </div>
   );
 }
 
@@ -328,6 +389,39 @@ function RadioOption({
         required
         className="h-4 w-4 accent-[#ac2846]"
       />
+      {label}
+    </label>
+  );
+}
+
+function CheckboxOption({
+  name,
+  checked,
+  onChange,
+  label,
+}: {
+  name?: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  label: string;
+}) {
+  return (
+    <label className="flex cursor-pointer items-center gap-3 text-sm text-black">
+      <input
+        type="checkbox"
+        name={name}
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="sr-only"
+      />
+      <span
+        className={`flex h-5 w-5 items-center justify-center rounded-full border border-black/70 transition-all ${
+          checked ? "border-maroon bg-maroon" : "bg-white"
+        }`}
+        aria-hidden="true"
+      >
+        {checked ? <span className="h-2.5 w-2.5 rounded-full bg-white" /> : null}
+      </span>
       {label}
     </label>
   );
