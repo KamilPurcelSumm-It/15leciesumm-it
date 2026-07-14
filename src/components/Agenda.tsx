@@ -5,47 +5,66 @@ import { useTranslations } from "next-intl";
 export function Agenda() {
   const t = useTranslations("agenda");
 
+  function getTranslation(key: string) {
+    const value = t(key);
+    return value === key || value === `agenda.${key}` ? undefined : value;
+  }
+
+  function dotEnd(text: string) {
+    return /[.!?]$/.test(text.trim()) ? text : `${text}.`;
+  }
+
   const agendaItems: Array<{ time: string; title: string[]; lines: string[]; highlighted?: boolean }> = [
     {
       time: "17:00 - 17:30",
       title: [t("item0_title")],
-      lines: [t("item0_line1"), t("item0_line2")],
+      lines: ["item0_line1", "item0_line2"].map(getTranslation).filter(Boolean).map(dotEnd),
       highlighted: true,
     },
     {
       time: "17:30 - 18:00",
       title: [t("item1_title_1"), t("item1_title_2")],
-      lines: [t("item1_line1"), t("item1_line2"), t("item1_line3"), t("item1_line4")],
+      lines: ["item1_line1", "item1_line2", "item1_line3", "item1_line4"].map(getTranslation).filter(Boolean).map(dotEnd),
     },
     {
       time: "18:00 - 18:40",
       title: [t("item2_title_1"), t("item2_title_2")],
-      lines: [t("item2_line1"), t("item2_line2"), t("item2_line3"), t("item2_line4"), t("item2_line5"), t("item2_line6")],
+      lines: [
+        "item2_line1",
+        "item2_line2",
+        "item2_line3",
+        "item2_line4",
+        "item2_line5",
+        "item2_line6",
+      ]
+        .map(getTranslation)
+        .filter(Boolean)
+        .map(dotEnd),
     },
     {
       time: "18:45 - 19:45",
       title: [t("item3_title_1"), t("item3_title_2")],
-      lines: [t("item3_line1"), t("item3_line2"), t("item3_line3"), t("item3_line4"), t("item3_line5")],
+      lines: ["item3_line1", "item3_line2", "item3_line3", "item3_line4", "item3_line5"].map(getTranslation).filter(Boolean).map(dotEnd),
     },
     {
       time: "19:45 - 20:00",
       title: [t("item4_title_1"), t("item4_title_2")],
-      lines: [t("item4_line1"), t("item4_line2"), t("item4_line3")],
+      lines: ["item4_line1", "item4_line2", "item4_line3"].map(getTranslation).filter(Boolean).map(dotEnd),
     },
     {
       time: "20:00 - 21:30",
       title: [t("item5_title_1"), t("item5_title_2")],
-      lines: [t("item5_line1"), t("item5_line2"), t("item5_line3")],
+      lines: ["item5_line1", "item5_line2", "item5_line3"].map(getTranslation).filter(Boolean).map(dotEnd),
     },
     {
       time: "21:30 - 22:00",
       title: [t("item6_title_1"), t("item6_title_2")],
-      lines: [t("item6_line1"), t("item6_line2"), t("item6_line3"), t("item6_line4")],
+      lines: ["item6_line1", "item6_line2", "item6_line3", "item6_line4"].map(getTranslation).filter(Boolean).map(dotEnd),
     },
     {
       time: "22:00 - 23:00",
       title: [t("item7_title_1")],
-      lines: [t("item7_line1"), t("item7_line2")],
+      lines: ["item7_line1", "item7_line2"].map(getTranslation).filter(Boolean).map(dotEnd),
     },
   ];
 
