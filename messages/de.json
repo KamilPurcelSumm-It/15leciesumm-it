@@ -80,6 +80,17 @@
     "error_not_found": "Die Registrierung mit diesem Code wurde nicht gefunden.",
     "loading": "Daten werden geladen..."
   },
+  "invite": {
+    "section_title": "Sondereinladung anfragen",
+    "description": "Füllen Sie das Formular aus und wir prüfen Ihre Anfrage für eine spezielle Einladung.",
+    "submit": "Anfrage senden",
+    "submitting": "Senden...",
+    "success_title": "Anfrage gesendet",
+    "success_text": "Vielen Dank. Wir melden uns bald mit Informationen zur speziellen Einladung.",
+    "error_validation": "Das Formular enthält Fehler.",
+    "error_server": "Die Anfrage konnte nicht gesendet werden.",
+    "error_network": "Keine Serververbindung. Bitte versuchen Sie es erneut."
+  },
   "venue": {
     "section_title": "Veranstaltungsort",
     "map_button": "Auf Karte anzeigen",
@@ -102,5 +113,13 @@
     "pl": "Polski",
     "en": "English",
     "de": "Deutsch"
+  }
+  ,
+  "guest": {
+    "label": "SPEZIALGAST",
+    "role": "Mateusz Kusznierewicz",
+    "name": "Mateusz Kusznierewicz",
+    "headline": "Wie gewinnt man über Jahre hinweg?\nLektionen eines Olympiasiegers für die Wirtschaft",
+    "description": "Wie gewinnt man nicht nur einmal, sondern über Jahre? In seinem Vortrag spricht Mateusz Kusznierewicz über Konsequenz, Widerstandsfähigkeit gegenüber Veränderungen und Gewohnheiten, die helfen, außergewöhnliche Ergebnisse sowohl im Sport als auch in der Wirtschaft zu erzielen."
   }
 }

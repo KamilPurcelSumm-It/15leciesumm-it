@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { Hero } from "@/components/Hero";
+import { SpecialGuest } from "@/components/SpecialGuest";
 import { Agenda } from "@/components/Agenda";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import { Venue } from "@/components/Venue";
@@ -14,6 +15,7 @@ export default function RegisterPage() {
   return (
     <main className="flex flex-1 flex-col">
       <Hero />
+      <SpecialGuest />
       <Agenda />
       <RegistrationForm guid={guid} />
       <Venue />

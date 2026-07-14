@@ -79,6 +79,17 @@
     "error_not_found": "Rejestracja z tym kodem nie znaleziona.",
     "loading": "Ładowanie danych..."
   },
+  "invite": {
+    "section_title": "Poproś o specjalne zaproszenie",
+    "description": "Uzupełnij formularz, a my skontaktujemy się z Tobą w sprawie specjalnego zaproszenia.",
+    "submit": "Wyślij prośbę",
+    "submitting": "Wysyłanie...",
+    "success_title": "Prośba wysłana",
+    "success_text": "Dziękujemy. Wkrótce skontaktujemy się z Tobą w sprawie specjalnego zaproszenia.",
+    "error_validation": "Formularz zawiera błędy.",
+    "error_server": "Nie udało się wysłać prośby.",
+    "error_network": "Brak połączenia z serwerem. Spróbuj ponownie."
+  },
   "venue": {
     "section_title": "Miejsce wydarzenia",
     "map_button": "Zobacz na mapie",
@@ -101,5 +112,13 @@
     "pl": "Polski",
     "en": "English",
     "de": "Deutsch"
+  }
+  ,
+  "guest": {
+    "label": "GOŚĆ SPECJALNY",
+    "role": "Mateusz Kusznierewicz",
+    "name": "Mateusz Kusznierewicz",
+    "headline": "Jak wygrywać przez lata?\nLekcje mistrza olimpijskiego dla biznesu",
+    "description": "Jak wygrywać nie raz, ale przez lata? Podczas wystąpienia Mateusz Kusznierewicz opowie o konsekwencji, odporności na zmiany i nawykach, które pomagają osiągać ponadprzeciętne wyniki zarówno w sporcie, jak i w biznesie."
   }
 }

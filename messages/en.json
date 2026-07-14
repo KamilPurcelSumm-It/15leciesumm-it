@@ -82,6 +82,17 @@
     "error_not_found": "Registration with this code was not found.",
     "loading": "Loading data..."
   },
+  "invite": {
+    "section_title": "Request special invitation",
+    "description": "Complete the form below and our team will review your request for a special invitation.",
+    "submit": "Send request",
+    "submitting": "Sending...",
+    "success_title": "Request sent",
+    "success_text": "Thank you. We will contact you soon with details about the special invitation.",
+    "error_validation": "The form contains errors.",
+    "error_server": "Failed to send your request.",
+    "error_network": "No server connection. Please try again."
+  },
   "venue": {
     "section_title": "Event venue",
     "map_button": "View on map",
@@ -104,5 +115,13 @@
     "pl": "Polski",
     "en": "English",
     "de": "Deutsch"
+  }
+  ,
+  "guest": {
+    "label": "SPECIAL GUEST",
+    "role": "Mateusz Kusznierewicz",
+    "name": "Mateusz Kusznierewicz",
+    "headline": "How to keep winning for years?\nLessons from an Olympic champion for business",
+    "description": "How do you win not just once, but over the years? In his talk Mateusz Kusznierewicz will speak about consistency, resilience to change, and habits that help achieve outstanding results both in sport and in business."
   }
 }

@@ -20,4 +20,13 @@ export const registrationSchema = z.object({
   }),
 });
 
+export const invitationSchema = registrationSchema.partial({
+  accommodation: true,
+  parking: true,
+  dietaryNeeds: true,
+  mealClassic: true,
+  mealVege: true,
+  imageConsent: true,
+});
+
 export type RegistrationInput = z.infer<typeof registrationSchema>;
