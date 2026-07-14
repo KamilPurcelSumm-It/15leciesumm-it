@@ -20,19 +20,10 @@ export function Hero() {
           priority
           sizes="(min-width: 1024px) 60vw, 100vw"
           className="object-cover object-right"
+          style={{ filter: 'contrast(1.12) saturate(1.08) brightness(1.02)' }}
         />
       </div>
-      {/* Wersja mobilna — zdjęcie nad treścią */}
-      <div className="relative mb-8 h-48 w-full overflow-hidden rounded-2xl md:hidden">
-        <Image
-          src="/images/hero2.jpg"
-          alt="15-lecie summ-it"
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, 60vw"
-          className="object-cover"
-        />
-      </div>
+      {/* mobile image removed — hide on small screens per design */}
 
       <div className="relative mx-auto max-w-7xl">
         <div className="max-w-xl">

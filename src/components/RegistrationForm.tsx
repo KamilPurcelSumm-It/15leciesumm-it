@@ -231,17 +231,25 @@ export function RegistrationForm({ guid }: { guid?: string }) {
                 {t("field_meal_preference")}
               </legend>
               <div className="mt-2 flex flex-wrap gap-x-10 gap-y-2">
-                <CheckboxOption
-                  name="mealClassic"
-                  checked={Boolean(form.mealClassic)}
-                  onChange={(v) => updateField("mealClassic", v)}
+                <RadioOption
+                  name="preferredMeal"
+                  value="CLASSIC"
                   label={t("meal_classic")}
+                  checked={form.mealClassic === true}
+                  onChange={() => {
+                    updateField("mealClassic", true);
+                    updateField("mealVege", false);
+                  }}
                 />
-                <CheckboxOption
-                  name="mealVege"
-                  checked={Boolean(form.mealVege)}
-                  onChange={(v) => updateField("mealVege", v)}
+                <RadioOption
+                  name="preferredMeal"
+                  value="VEGE"
                   label={t("meal_vege")}
+                  checked={form.mealVege === true}
+                  onChange={() => {
+                    updateField("mealClassic", false);
+                    updateField("mealVege", true);
+                  }}
                 />
               </div>
             </fieldset>

@@ -38,10 +38,10 @@ export function Footer() {
             href="tel:+48511373931"
             className="text-sm text-white/90 hover:text-white"
           >
-            Telefon: +48 511 373 931
+            {t("contact_phone_label")} +48 511 373 931
           </a>
           <p className="text-sm text-white/90">
-            Adres: ul. Głogowska 31/33
+            {t("contact_address_label")} ul. Głogowska 31/33
             <br />
             60-702 Poznań
           </p>
