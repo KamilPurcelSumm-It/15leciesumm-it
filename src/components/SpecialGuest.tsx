@@ -11,7 +11,6 @@ export function SpecialGuest() {
   return (
     <section className="mx-auto w-full px-6 py-10 md:px-16">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
-        {/* Tło */}
         <div className="absolute inset-0">
           <Image
             src="/images/tlo.png"
