@@ -20,6 +20,7 @@ export function Agenda() {
     if (vals.length === 1) return [dotEnd(vals[0])];
     return [...vals.slice(0, -1), dotEnd(vals[vals.length - 1])];
   }
+
   const agendaItems: Array<{ time: string; title: string[]; lines: string[]; highlighted?: boolean }> = [
     {
       time: "17:00 - 17:30",
