@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "15-lecie summ-it",
   description:
     "Jubileuszowy wieczór z okazji 15-lecia summ-it — 27.11.2026, Hotel Moderno, Poznań.",
+  icons: {
+    icon: [{ url: "/logo_summit.png", type: "image/png" }],
+    shortcut: "/logo_summit.png",
+  },
 };
 
 export default async function LocaleLayout({
