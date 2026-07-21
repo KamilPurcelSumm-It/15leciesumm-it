@@ -18,8 +18,11 @@ export default function middleware(request: NextRequest) {
   }
 
   if (!isLocalePath(pathname)) {
+    if (pathname === "/favicon.ico") {
+      return NextResponse.redirect(new URL("/logo_summit.png", request.url));
+    }
+
     if (
-      pathname === "/favicon.ico" ||
       pathname.startsWith("/api/") ||
       pathname.startsWith("/_next/") ||
       pathname.startsWith("/_vercel/") ||
