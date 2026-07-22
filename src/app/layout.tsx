@@ -3,8 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   icons: {
-    icon: [{ url: "/logo-summit.png", type: "image/png" }],
-    shortcut: "/logo-summit.png",
+    icon: [{ url: "/logo_summit.png", type: "image/png" }],
+    shortcut: "/logo_summit.png",
   },
 };
 
