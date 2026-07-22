@@ -14,10 +14,11 @@ export function Hero() {
       {/* Tło — grafika 15-lecia na całą szerokość sekcji (desktop) */}
       <div className="pointer-events-none absolute inset-0 hidden md:block">
         <Image
-          src="/images/hero2.jpg"
+          src="/images/hero3.jpg"
           alt=""
           fill
           priority
+          quality={100}
           sizes="(min-width: 1024px) 60vw, 100vw"
           className="object-cover object-right"
           style={{ filter: 'contrast(1.12) saturate(1.08) brightness(1.02)' }}
