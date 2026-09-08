@@ -59,7 +59,7 @@
     "field_company": "Firma",
     "field_email": "E-mail",
     "field_accommodation": "Czy potrzebuje Pan/Pani noclegu?",
-    "field_parking": "Czy potrzebuje Pan/Pani miejsca parkingowego w hotelu?",
+    "field_accommodation_description": "Dla gości wydarzenia zapewniamy bezpłatny nocleg.",
     "field_meal_preference": "Jakie wyżywienie Pan/Pani preferuje?",
     "meal_classic": "Dieta klasyczna",
     "meal_vege": "Dieta vege",

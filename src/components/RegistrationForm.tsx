@@ -214,16 +214,10 @@ export function RegistrationForm({ guid }: { guid?: string }) {
 
             <Field
               label={t("field_accommodation")}
+              description={t("field_accommodation_description")}
               name="accommodation"
               value={form.accommodation}
               onChange={(v) => updateField("accommodation", v)}
-            />
-
-            <Field
-              label={t("field_parking")}
-              name="parking"
-              value={form.parking}
-              onChange={(v) => updateField("parking", v)}
             />
 
             <fieldset className="rounded-3xl border border-black/70 px-5 py-4">
@@ -333,6 +327,7 @@ export function RegistrationForm({ guid }: { guid?: string }) {
 
 function Field({
   label,
+  description,
   name,
   value,
   onChange,
@@ -342,6 +337,7 @@ function Field({
   centered = false,
 }: {
   label: string;
+  description?: string;
   name: string;
   value: string;
   onChange: (value: string) => void;
@@ -356,6 +352,11 @@ function Field({
                 {label}
                 {required && " *"}
               </p>
+              {description && (
+                <p className="px-1 text-xs italic leading-relaxed text-neutral-600">
+                  {description}
+                </p>
+              )}
               <input
                 id={name}
                 name={name}

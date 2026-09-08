@@ -62,7 +62,7 @@
     "field_company": "Company",
     "field_email": "E-mail",
     "field_accommodation": "Do you need accommodation?",
-    "field_parking": "Do you need a parking space at the hotel?",
+    "field_accommodation_description": "Free accommodation is provided for event guests.",
     "field_meal_preference": "Which meal option do you prefer?",
     "meal_classic": "Classic meal",
     "meal_vege": "Vegetarian meal",

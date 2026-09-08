@@ -60,7 +60,7 @@
     "field_company": "Unternehmen",
     "field_email": "E-Mail",
     "field_accommodation": "Benötigen Sie eine Unterkunft?",
-    "field_parking": "Benötigen Sie einen Parkplatz im Hotel?",
+    "field_accommodation_description": "Für Veranstaltungsgäste stellen wir eine kostenlose Unterkunft bereit.",
     "field_meal_preference": "Welche Verpflegung bevorzugen Sie?",
     "meal_classic": "Klassische Verpflegung",
     "meal_vege": "Vegetarische Verpflegung",
